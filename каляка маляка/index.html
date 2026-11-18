@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оплата детского сада</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Расчет стоимости детского сада</h2>
+
+    <div class="form-group">
+        <label>ФИО ребенка:</label>
+        <input type="text" id="fio">
+    </div>
+
+    <div class="form-group">
+        <label>Выберите месяц:</label>
+        <select id="month" onchange="changePrice()">
+            <option value="winter">Зима (Декабрь, Январь, Февраль)</option>
+            <option value="spring">Весна (Март, Апрель, Май)</option>
+            <option value="summer">Лето (Июнь, Июль, Август)</option>
+            <option value="autumn">Осень (Сентябрь, Октябрь, Ноябрь)</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Посещено дней:</label>
+        <input type="number" id="days" min="1" max="31">
+    </div>
+
+    <div class="form-group">
+        <label>Дополнительная услуга:</label>
+        <select id="service">
+            <option value="0">Нет</option>
+            <option value="2000">Веселый мяч (2000 руб.)</option>
+            <option value="3000">Каляка-маляка (3000 руб.)</option>
+            <option value="2500">Вокал (2500 руб.)</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Стоимость 1 дня:</label>
+        <input type="text" id="price" disabled>
+    </div>
+
+    <div class="buttons">
+        <button onclick="calculate()">Рассчитать</button>
+        <button class="clear-btn" onclick="clearForm()">Очистить</button>
+    </div>
+
+    <div id="resultBlock">
+        <div class="form-group">
+            <label>Сумма к оплате:</label>
+            <input type="text" id="total" disabled>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
